@@ -29,7 +29,7 @@ ENV KARAF_VERSION 4.0.4
 RUN cd /tmp \
 	&& wget -q -O "apache-karaf-$KARAF_VERSION.tar.gz" "http://archive.apache.org/dist/karaf/"$KARAF_VERSION"/apache-karaf-"$KARAF_VERSION".tar.gz" \
 	&& tar -zxvf apache-karaf-$KARAF_VERSION.tar.gz \
-	&& mv /tmp/apache-karaf-$KARAF_VERSION /opt/karaf 
+	&& mv /tmp/apache-karaf-$KARAF_VERSION /opt/karaf
 	
 RUN /opt/karaf/bin/start; \
     until /opt/karaf/bin/client version; do sleep 5s; done; \
